@@ -4,4 +4,16 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-tracing-subscriber = "0.3.16"
+tracing-subscriber = { version = "0.3.16", default-features = false, features = [
+    "alloc",
+    # Both of these features cause the compiler crash
+    # "ansi",
+    # "fmt",
+    "nu-ansi-term",
+    "registry",
+    "sharded-slab",
+    "smallvec",
+    "std",
+    "thread_local",
+    "tracing-log"
+] }
